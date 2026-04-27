@@ -1,0 +1,5 @@
+commit 058437e39064b90f199bc1bce444244df51d56ff
+Author: Darmo Wiyono <2313020200@mhs.univ.ac.id>
+Date:   Wed Apr 8 14:24:34 2026 +0700
+
+    catatan: menentukan peran dalam tim.
