@@ -1,18 +1,24 @@
-# API Contract - User Profile
+## Endpoint Login
 
-## Endpoint Profile
+**Endpoint:** `/api/v1/login`
 
-**Endpoint:** `/api/v1/profile`
+**Method:** `POST`
 
-**Method:** `GET`
+### Request Body
+
+```json
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
 
 ### Response Body
 
 ```json
 {
-  "id": 1,
-  "username": "mahasiswa_sd",
-  "email": "mhs@univ.ac.id",
-  "avatar_url": "https://image.com/avatar.png"
+  "status": "success",
+  "message": "Login berhasil",
+  "token": "jwt-token-example"
 }
 ```
