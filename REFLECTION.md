@@ -1,0 +1,5 @@
+# Reflection Mid-Term
+
+Bagian yang paling sulit saya kuasai dari Minggu 1 sampai 7 adalah branching, merging, dan sinkronisasi repository. Awalnya saya sering bingung menentukan branch mana yang aktif dan bagaimana cara menyelesaikan conflict. Selain itu, saya juga sempat kesulitan memahami perbedaan antara remote repository, local repository, dan push-pull workflow.
+
+Cara saya mengatasinya adalah dengan mencoba langsung perintah Git secara berulang, membaca hasil error dengan lebih teliti, dan mencocokkan langkah praktik dengan catatan materi. Saya juga mulai membiasakan diri mengecek `git status`, `git branch`, dan `git log` sebelum melakukan commit atau push. Dari proses itu saya jadi lebih paham bahwa Git bukan hanya untuk menyimpan kode, tetapi juga untuk menjaga alur kerja tim tetap rapi dan teratur.
