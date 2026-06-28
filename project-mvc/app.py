@@ -1,4 +1,12 @@
 from controllers.user_controller import run_app
+import os
+
+user_name = os.getenv("APP_USER", "Guest")
+app_env = os.getenv("APP_ENV", "Development")
+
+print(f"Halo {user_name}! Aplikasi ini berjalan di dalam kontainer Docker.\n")
+print(f"Environment : {app_env}\n")
+=======
 from controllers.api_handler import get_users
 from views.dashboard_component import (
     render_dashboard,
@@ -15,7 +23,6 @@ app_state = {
 def update_state(new_data):
     app_state["items"] = new_data
     app_state["is_loading"] = False
-
 
 if __name__ == "__main__":
 
