@@ -1,5 +1,9 @@
 from controllers.user_controller import run_app
-from views.dashboard_component import render_dashboard
+from controllers.api_handler import get_users
+from views.dashboard_component import (
+    render_dashboard,
+    fetch_data_from_api
+)
 
 # Simulasi State
 app_state = {
@@ -17,22 +21,27 @@ if __name__ == "__main__":
 
     print("Loading data...")
 
-    # Kondisi loading
-    render_dashboard(app_state["items"], app_state["is_loading"])
-
-    mock_data = [
-        {"id": 101, "name": "Produk A"},
-        {"id": 102, "name": "Produk B"}
-    ]
-
-    update_state(mock_data)
+    # Tampilan saat loading
+    render_dashboard(
+        app_state["items"],
+        app_state["is_loading"]
+    )
 
     print()
 
-    # Setelah loading selesai
-    render_dashboard(app_state["items"], app_state["is_loading"])
+    # Integrasi Frontend-Backend
+    data = fetch_data_from_api(get_users)
+
+    if data:
+        update_state(data)
+
+    # Setelah data berhasil diterima
+    render_dashboard(
+        app_state["items"],
+        app_state["is_loading"]
+    )
 
     print()
 
-    # Aplikasi sebelumnya tetap berjalan
+    # Menjalankan aplikasi MVC sebelumnya
     run_app()
