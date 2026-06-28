@@ -46,4 +46,9 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    print("update backend v2")
+
+    
+    # tambahan kecil
+print("update backend v2 yak")
+
+
