@@ -1,0 +1,30 @@
+services:
+  web-app:
+    build: .
+    container_name: mvc-app
+    environment:
+      APP_USER: ${USER_NAME}
+      APP_ENV: ${APP_ENV}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - mvc-network
+
+  db-server:
+    image: postgres:15-alpine
+    container_name: mvc-db
+    environment:
+      POSTGRES_PASSWORD: rahasia
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - mvc-network
+
+volumes:
+  db-data:
+
+networks:
+  mvc-network:
+    driver: bridge
