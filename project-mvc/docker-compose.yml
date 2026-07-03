@@ -9,6 +9,7 @@ services:
       - "5000:5000"
     volumes:
       - ./logs:/app/logs
+      - shared-storage:/app/data
     networks:
       - mvc-network
 
@@ -24,7 +25,7 @@ services:
 
 volumes:
   db-data:
-
+  shared-storage:
 networks:
   mvc-network:
     driver: bridge
