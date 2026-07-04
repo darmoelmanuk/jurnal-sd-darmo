@@ -1,9 +1,37 @@
-FROM python:3.9-slim
+# =====================
+# STAGE 1 BUILDER
+# =====================
+FROM python:3.9-slim AS builder
 
 WORKDIR /app
 
-ENV APP_USER="Developer Mahasiswa"
+COPY requirements.txt .
 
+RUN pip install --user -r requirements.txt
+
+
+# =====================
+# STAGE 2 PRODUCTION
+# =====================
+FROM python:3.9-alpine
+
+WORKDIR /app
+
+
+# Copy dependency hasil builder
+COPY --from=builder /root/.local /root/.local
+
+
+# Copy source code aplikasi
 COPY . .
+
+
+# Environment variable M12
+ENV APP_USER="Developer Mahasiswa"
+ENV APP_ENV="Production"
+
+
+ENV PATH=/root/.local/bin:$PATH
+
 
 CMD ["python", "app.py"]
