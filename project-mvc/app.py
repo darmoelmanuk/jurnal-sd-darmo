@@ -6,7 +6,6 @@ app_env = os.getenv("APP_ENV", "Development")
 
 print(f"Halo {user_name}! Aplikasi ini berjalan di dalam kontainer Docker.\n")
 print(f"Environment : {app_env}\n")
-# =====================================================================
 from controllers.api_handler import get_users
 from views.dashboard_component import (
     render_dashboard,
